@@ -57,7 +57,7 @@ a:hover { text-decoration: underline; }
   letter-spacing: -0.01em;
 }
 .brand:hover { text-decoration: none; }
-.brand img { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-c); }
+.brand img { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-c); object-fit: cover; object-position: 50% 30%; background: #fff; }
 .brand small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
 .nav-links { display: flex; gap: 8px; align-items: center; }
 .nav-links a {
@@ -122,7 +122,7 @@ a:hover { text-decoration: underline; }
   display: grid;
   place-items: center;
 }
-.doodle-frame img { width: 100%; max-width: 320px; }
+.doodle-frame img { width: 100%; max-width: 340px; border-radius: 16px; background: #fff; }
 .doodle-frame::before {
   content: "";
   position: absolute;
@@ -188,8 +188,25 @@ section.block { padding: 56px 0; border-top: 1px solid var(--line-c); }
   display: grid; place-items: center; border-radius: 12px;
   background: var(--accent-soft);
 }
-.contact-row .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.contact-row .value { font-size: 1.02rem; color: var(--ink); font-weight: 500; word-break: break-word; }
+.contact-row .body { flex: 1; }
+.contact-row .label { display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 2px; }
+.contact-row .value { display: block; font-size: 1.02rem; color: var(--ink); font-weight: 600; word-break: break-word; }
+
+/* Small action buttons (Call / WhatsApp) */
+.contact-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.mini-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 999px;
+  font-size: 0.85rem; font-weight: 600;
+  border: 1px solid var(--line-c); color: var(--ink);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.mini-btn:hover { text-decoration: none; transform: translateY(-1px); }
+.mini-btn svg { width: 15px; height: 15px; }
+.mini-call { background: var(--ink); color: #fff; border-color: var(--ink); }
+.mini-call svg { fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.mini-wa { background: #25d366; color: #fff; border-color: #25d366; }
+.mini-wa svg { fill: #fff; stroke: none; }
 
 .cta-band {
   background: var(--ink);
