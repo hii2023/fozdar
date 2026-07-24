@@ -1,12 +1,12 @@
 :root {
-  --ink: #1c2b3a;
-  --ink-soft: #47566a;
-  --muted: #6b7789;
-  --line-c: #e4e2db;
-  --bg: #fbf7f0;
+  --ink: #1f2d2b;         /* dark slate-teal for main headings */
+  --ink-soft: #46565a;    /* body text, warm gray */
+  --muted: #7b8a8c;       /* muted labels */
+  --line-c: #e2e9e7;
+  --bg: #f6f8f7;          /* light background */
   --panel: #ffffff;
-  --accent: #b8863b;
-  --accent-soft: #f0e6d2;
+  --accent: #147a6c;      /* teal green */
+  --accent-soft: #e0f0ec; /* light teal tint */
   --radius: 14px;
   --maxw: 1080px;
 }
@@ -17,11 +17,17 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--ink);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink-soft);
   background: var(--bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use Poppins; body uses Inter (two fonts total) */
+h1, h2, h3, .brand span, .section-title, .cta-band h2, .stat b {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -34,7 +40,7 @@ a:hover { text-decoration: underline; }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(251, 247, 240, 0.9);
+  background: rgba(246, 248, 247, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line-c);
 }
@@ -58,7 +64,7 @@ a:hover { text-decoration: underline; }
 }
 .brand:hover { text-decoration: none; }
 .brand img { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-c); object-fit: cover; object-position: 50% 30%; background: transparent; }
-.brand small { display: block; font-weight: 400; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
+.brand small { display: block; font-family: "Inter", sans-serif; font-weight: 400; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
 .nav-links { display: flex; gap: 8px; align-items: center; }
 .nav-links a {
   color: var(--ink-soft);
@@ -144,7 +150,7 @@ section.block { padding: 56px 0; border-top: 1px solid var(--line-c); }
   border-radius: var(--radius);
   padding: 26px 24px;
 }
-.card h3 { margin: 14px 0 8px; font-size: 1.1rem; }
+.card h3 { margin: 14px 0 8px; font-size: 1.1rem; color: var(--accent); }
 .card p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
 .card .ic {
   width: 46px; height: 46px;
